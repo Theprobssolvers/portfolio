@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="The Prob Solvers AI builds AI-powered automations, business workflows, API integrations, and intelligent systems using n8n, Make.com, and AI." />
   <title>The Prob Solvers AI — AI Automation & Business Workflows</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -160,6 +160,63 @@
     html { width: 100%; max-width: 100%; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
     body { width: 100%; max-width: 100%; overflow-x: hidden; }
     img, video, svg, canvas { max-width: 100%; }
+  
+    /* Responsive hardening */
+    *, *::before, *::after { min-width: 0; }
+    .card, .contact-form, .contact-text, .hero-content, .section-sub,
+    .contact-link, .flow, .tags { min-width: 0; }
+    .card p, .contact-text p, .section-sub, .hero-sub,
+    .contact-link, .stat-label, footer p { overflow-wrap: anywhere; }
+    .flow { width: 100%; }
+    .flow-step { max-width: 100%; }
+    .contact-link > div:last-child { min-width: 0; }
+    input, textarea, button { max-width: 100%; }
+    .btn-primary, .btn-ghost, .btn-nav { white-space: normal; }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 10px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .nav-logo { font-size: clamp(.85rem, 2.4vw, 1.1rem); }
+      .hero { padding-left: 5%; padding-right: 5%; }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+      .card-featured { grid-column: 1 / -1; }
+      .contact { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 12px 4%; }
+      .nav-logo { max-width: 68%; line-height: 1.2; }
+      .btn-nav { padding: 8px 12px; font-size: .72rem; text-align: center; }
+      .hero { padding: 88px 4% 52px; }
+      .hero-content { width: 100%; }
+      .hero h1 { font-size: clamp(1.85rem, 9vw, 2.5rem); }
+      .hero-tools { gap: 7px; }
+      .tool-pill { font-size: .72rem; padding: 5px 10px; }
+      .hero-cta { width: 100%; }
+      .hero-cta a { width: 100%; text-align: center; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .stat-item { padding: 18px 10px; }
+      .stat-number { font-size: 1.45rem; }
+      .section { padding: 52px 4%; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .card-featured { padding: 22px; gap: 20px; }
+      .flow { gap: 5px; }
+      .flow-step { font-size: .67rem; padding: 4px 7px; }
+      .contact { padding: 52px 4%; }
+      .contact-form { padding: 20px; }
+      .contact-link { padding: 12px 14px; }
+      footer { padding: 20px 4%; }
+    }
+
+    @media (max-width: 380px) {
+      .nav-logo { font-size: .78rem; }
+      .btn-nav { font-size: .66rem; padding: 7px 9px; }
+      .hero h1 { font-size: 1.7rem; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .stat-item { padding: 14px 12px; }
+      .flow-step { font-size: .63rem; }
+    }
+
   </style>
 </head>
 <body>
@@ -282,7 +339,7 @@
           </div>
           <div class="result-box" style="margin-top:24px;background:rgba(0,212,255,0.07);border-color:rgba(0,212,255,0.25);">
             <div class="rb-title" style="color:var(--cyan)">🎯 How It Works</div>
-            <p>The AI agent calls the lead, introduces itself as "Alex", asks qualifying questions, collects preferred appointment time, and books it directly — all in under 3 minutes. Client receives a Google Calendar invite and Gmail confirmation automatically. This same system is being sold to real estate agencies and dental clinics for $800–$1500/month.</p>
+            <p>The AI agent calls the lead, introduces itself as "Alex", asks qualifying questions, collects preferred appointment time, and books it directly — all in under 3 minutes. Client receives a Google Calendar invite and Gmail confirmation automatically. This same system is actively being deployed for real estate agencies and dental clinics.</p>
           </div>
         </div>
       </div>
@@ -318,7 +375,6 @@
       <div class="card"><span class="card-tag live">Project 02 · Make.com</span><h3>AI Lead Follow-up System</h3><p>Automated multi-step follow-up sequence. Leads receive timely, personalized messages based on their stage in the pipeline.</p><div class="tags"><span class="tag">Make.com</span><span class="tag">AI Toolkit</span></div><div class="live-status" style="margin-top:auto;padding-top:12px;"><span class="live-dot"></span> Built</div></div>
 
       <!-- PROJECT 03 -->
-      <div class="card"><span class="card-tag live">Project 03 · Make.com</span><h3>Social Media Auto-Poster</h3><p>Content scheduled and posted automatically across platforms. AI generates captions so your brand shows up consistently.</p><div class="tags"><span class="tag">Make.com</span><span class="tag">Social APIs</span></div><div class="live-status" style="margin-top:auto;padding-top:12px;"><span class="live-dot"></span> Built</div></div>
 
       <!-- PROJECT 04 -->
       <div class="card"><span class="card-tag live">Project 04 · Make.com</span><h3>FAQ Customer Support Bot</h3><p>AI chatbot trained on your business FAQs. Handles common queries 24/7 and escalates edge cases to your team.</p><div class="tags"><span class="tag">Make.com</span><span class="tag">AI Chatbot</span></div><div class="live-status" style="margin-top:auto;padding-top:12px;"><span class="live-dot"></span> Built</div></div>
@@ -327,7 +383,6 @@
       <div class="card"><span class="card-tag n8n">Project 05 · n8n</span><h3>n8n Lead Capture &amp; Notify</h3><p>Webhook triggers on new lead → data appended to Google Sheets → instant Gmail notification sent automatically.</p><div class="flow"><div class="flow-step green">Webhook</div><span class="flow-arrow">→</span><div class="flow-step green">Sheets</div><span class="flow-arrow">→</span><div class="flow-step green">Gmail</div></div><div class="tags"><span class="tag">n8n</span><span class="tag">Webhooks</span><span class="tag">Google Sheets</span><span class="tag">Gmail</span></div><div class="live-status" style="margin-top:auto;padding-top:12px;"><span class="live-dot"></span> Live & Published</div></div>
 
       <!-- PROJECT 06 -->
-      <div class="card"><span class="card-tag n8n">Project 06 · n8n + AI</span><h3>AI Lead Generation System</h3><p>Reads a list of businesses → AI analyzes each → generates personalized outreach messages automatically using Google Gemini.</p><div class="flow"><div class="flow-step green">Sheets</div><span class="flow-arrow">→</span><div class="flow-step green">Loop</div><span class="flow-arrow">→</span><div class="flow-step green">Gemini AI</div></div><div class="tags"><span class="tag">n8n</span><span class="tag">Google Gemini</span><span class="tag">Google Sheets</span><span class="tag">Loop</span></div><div class="live-status" style="margin-top:auto;padding-top:12px;"><span class="live-dot"></span> Live & Published</div></div>
 
       <!-- PROJECT 07 -->
       <div class="card"><span class="card-tag n8n">Project 07 · n8n + AI</span><h3>AI Cold Email Personalization Engine</h3><p>Reads each company's live website → AI writes a hyper-personalized cold email based on real content → saves to Google Sheets. No templates.</p><div class="flow"><div class="flow-step green">HTTP</div><span class="flow-arrow">→</span><div class="flow-step green">Gemini AI</div><span class="flow-arrow">→</span><div class="flow-step green">Sheets</div></div><div class="tags"><span class="tag">n8n</span><span class="tag">Google Gemini</span><span class="tag">HTTP Request</span><span class="tag">Google Sheets</span></div><div class="live-status" style="margin-top:auto;padding-top:12px;"><span class="live-dot"></span> Live & Published</div></div>
@@ -342,7 +397,6 @@
       <div class="card"><span class="card-tag n8n">Project 10 · n8n + AI</span><h3>Real Estate Lead Follow-up System</h3><p>Automatically captures real estate leads, scores them with AI, and sends timed personalized follow-up sequences until a booking is made.</p><div class="tags"><span class="tag">n8n</span><span class="tag">AI Scoring</span><span class="tag">Gmail</span><span class="tag">Real Estate</span></div><div class="live-status" style="margin-top:auto;padding-top:12px;"><span class="live-dot"></span> Built</div></div>
 
       <!-- PROJECT 11 -->
-      <div class="card"><span class="card-tag n8n">Project 11 · n8n + AI</span><h3>AI Invoice Generator</h3><p>Pulls project data, generates formatted invoices using AI, and sends them to clients automatically — with PDF attachment and payment reminders.</p><div class="tags"><span class="tag">n8n</span><span class="tag">AI</span><span class="tag">Google Docs</span><span class="tag">Finance</span></div><div class="live-status" style="margin-top:auto;padding-top:12px;"><span class="live-dot"></span> Built</div></div>
 
       <!-- PROJECT 12 -->
       <div class="card"><span class="card-tag n8n">Project 12 · n8n + AI</span><h3>Healthcare Appointment Automation System</h3><p>Books, confirms, and reschedules patient appointments automatically — with AI-powered reminders via email/SMS, zero manual coordination.</p><div class="tags"><span class="tag">n8n</span><span class="tag">AI</span><span class="tag">Calendar API</span><span class="tag">Healthcare</span></div><div class="live-status" style="margin-top:auto;padding-top:12px;"><span class="live-dot"></span> Built</div></div>
